@@ -5,8 +5,8 @@ class Floatie {
 		this.icon = false;
 
 		this.r = random(0.6*sizeunit, 1.5*sizeunit);
-		this.x = random(this.r, width - this.r);
-		this.y = random(this.r, height - this.r);
+		this.x = random(this.r + gridCellWidth, width - this.r - gridCellWidth);
+		this.y = random(this.r + gridCellHeight, height - this.r - gridCellHeight);
 
 		this.vel = p5.Vector.random2D();
 		this.vel.mult(1.5 * sizeunit / (1.5 * this.r));
