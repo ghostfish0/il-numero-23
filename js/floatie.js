@@ -53,7 +53,7 @@ class Floatie {
 		translate(this.x, this.y);
 		fill(color(this.color));
 		stroke(themecolors[0]);
-		strokeWeight(0.75);
+		strokeWeight(0.3);
 
 		if (this.shape == "spiked") {
 			beginShape();
