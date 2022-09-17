@@ -1,17 +1,28 @@
 class Floatie {
 	constructor(id) {
 		this.id = id;
-		this.r = random(0.4*sizeunit, 1.2*sizeunit);
-		this.vel = p5.Vector.random2D();
-		this.vel.mult(0.8 * sizeunit / (1.5 * this.r));
+		this.title = objectTitles[this.id];
+		this.icon = false;
+
+		this.r = random(0.6*sizeunit, 1.5*sizeunit);
 		this.x = random(this.r, width - this.r);
 		this.y = random(this.r, height - this.r);
+
+		this.vel = p5.Vector.random2D();
+		this.vel.mult(1.5 * sizeunit / (1.5 * this.r));
+
 		this.verticesCnt = floor(random(15, 30));
 		this.color = themecolors[floor(random(1, themecolors.length))];
 		this.shape = shapes[floor(random(1) * shapes.length)];
 		this.offset = [];
 		this.alphabg = 0.8;
 		this.ringr = 0;
+
+		if (this.title == "Vietnam flag") {
+			this.shape = "circle";
+			this.color = themecolors[2];
+			this.icon = true;
+		}
 
 		if (this.shape == "spiked") {
 			for(let i = 0; i < this.verticesCnt; i++)
@@ -23,11 +34,18 @@ class Floatie {
 	}
 	showtitle() {
 		push();
-		let s = objectTitles[this.id];
 		translate(this.x, this.y);
 		fill(themecolors[0])
-		textSize(2 * this.r / s.length);
-		text(s, 0, 0);
+		textSize(2 * this.r / this.title.length);
+	    if (this.title != "𝐱")
+	    	textFont(myFont);
+		text(this.title, 0, 0);
+		pop();
+	}
+	showicon() {
+		push();
+		translate(this.x, this.y);
+		image(mystar, -this.r / 2, -this.r / 2, this.r, this.r);
 		pop();
 	}
 	show() {
@@ -35,7 +53,7 @@ class Floatie {
 		translate(this.x, this.y);
 		fill(color(this.color));
 		stroke(themecolors[0]);
-		strokeWeight(1);
+		strokeWeight(0.75);
 
 		if (this.shape == "spiked") {
 			beginShape();
@@ -52,9 +70,13 @@ class Floatie {
 			ellipse(0, 0, 2*this.r);
 
 		pop();
-
-		this.showtitle();
-	}
+/*
+		if (!this.icon)
+			this.showtitle();
+		else
+			this.showicon();
+		
+*/	}
 
 	move() {
 		this.x += this.vel.x;

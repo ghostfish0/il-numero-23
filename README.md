@@ -16,20 +16,20 @@ Introducing me, Tín, or, my self-potrait.
 1. { }
 2. 𝐱
 3. An empty block of sticky notes
-4. Half-finished canvas
+4. "Hello I'm Tin"
 5. Source
 6. A compass that doesn't work sometimes
 7. fish bones
-8. Ruler
+8. Film
 9. A pair of glasses
 10. Sneakers
-11. Watercolor 
+11. Color blobs 
 12. Leaf
 13. Brain
-14. One strong arm
+14. An arm
 15. The Ocean
 16. A charger
-17. Headphones
+17. An ear
 18. Vietnam flag
 19. Alarm clock
 20. Dice

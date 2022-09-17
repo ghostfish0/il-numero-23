@@ -1,5 +1,8 @@
-let floatiesCnt = 23;
-let floaties = [];
+function preload() {
+    myFont = loadFont('assets/HelveticaComp.ttf')
+
+    mystar = loadImage('assets/icons/star.png');
+}
 
 function setup() {
     // canvas create
@@ -15,21 +18,38 @@ function setup() {
 
 
 function draw() {
-    push();
-    blendMode(BLEND);
-    background(color(
-            themecolors[1][0],
-            themecolors[1][1],
-            themecolors[1][2],
-            0.5
-    ));
     gridBackground();
-    pop();
-
+    drawBorder();
     drawFloaties();
+
 }
 
+function switchBorderColor() {
+    borderColorIndex++;
+    if (borderColorIndex == 1)
+        borderColorIndex++;
+    if (borderColorIndex == themecolors.length)
+        borderColorIndex = 0;
+
+}
+
+function drawBorder() {
+    push();
+    noStroke();
+/*    if (frameCount % 25 == 0)
+        switchBorderColor();
+*/    fill(themecolors[borderColorIndex]);
+
+    rectMode(CORNER);
+    rect(0, 0, gridCellWidth, height);
+    rect(width - gridCellWidth + 1, 0, gridCellWidth, height);
+    rect(0, 0, width, gridCellHeight - 1);
+    rect(0, height - gridCellHeight, width, gridCellHeight);
+
+    pop();
+}
 function gridBackground() {
+    push();
     strokeWeight(0.5);
     stroke(themecolors[1]);
     for(let i = 1; i < gridColCnt; i++) {
@@ -38,6 +58,7 @@ function gridBackground() {
     for(let i = 1; i < gridRowCnt; i++) {
         line(0, i * gridCellHeight, width, i * gridCellHeight);
     }
+    pop();
 }
 
 function addFloaties() {

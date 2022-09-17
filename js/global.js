@@ -19,33 +19,57 @@ let objectTitles = [
 	"{ }",
 	"𝐱",
 	"An empty block of sticky notes",
-	"Half-finished canvas",
+	"Hello I'm Tin",
 	"Source",
 	"A compass that doesn't work sometimes",
 	"fish bones",
-	"Ruler",
+	"Film",
 	"A pair of glasses",
 	"Sneakers",
-	"Watercolor ",
+	"Color blobs",
 	"Leaf",
 	"Brain",
-	"One strong arm",
+	"An arm",
 	"The Ocean",
 	"A charger",
-	"Headphones",
+	"An Ear",
 	"Vietnam flag",
 	"Alarm clock",
 	"Dice",
 	"A pair of eyes",
 	"Beating heart",
-	"A cup of Boba",
-]
+	"umbrella",
+];
 
-let shapes = ["spiked", "circle"]
+let haveicons = [
+	"An empty block of sticky notes",
+	"A compass that doesn't work sometimes",
+	"fish bones",
+	"Film",
+	"A pair of glasses",
+	"Sneakers",
+	"Color blobs",
+	"Leaf",
+	"Brain",
+	"The Ocean",
+	"A charger",
+	"An Ear",
+	"Vietnam flag",
+	"Alarm clock",
+	"Dice",
+	"A pair of eyes",
+	"Beating heart",
+	"umbrella",
+];
+
+let shapes = ["spiked", "circle"];
+
+let floatiesCnt = 23;
+let floaties = [];
 
 let canvasWidth = 564;
 let canvasHeight = 747;
-let canvasZoom = 0.8;
+let canvasZoom = 1.2;
 canvasHeight = canvasHeight * canvasZoom;
 canvasWidth = canvasWidth * canvasZoom;
 
@@ -57,3 +81,11 @@ let gridColCnt = 17;
 let gridRowCnt = 22;
 let gridCellWidth = canvasWidth / gridColCnt;
 let gridCellHeight = canvasHeight / gridRowCnt;
+
+let borderColorIndex = 0;
+
+let objectsTouched = false;
+
+let myFont;
+
+let mystar;
