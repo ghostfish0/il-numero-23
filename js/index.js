@@ -48,9 +48,7 @@ function switchBorderColor() {
 function drawBorder() {
     push();
     noStroke();
-/*    if (frameCount % 25 == 0)
-        switchBorderColor();
-*/    fill(themecolors[borderColorIndex]);
+    fill(themecolors[borderColorIndex]);
 
     rectMode(CORNER);
     rect(0, 0, gridCellWidth, height);
