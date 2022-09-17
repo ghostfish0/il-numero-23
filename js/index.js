@@ -17,11 +17,23 @@ function setup() {
 }
 
 
-function draw() {
+function draw() {    
     gridBackground();
     drawBorder();
     drawFloaties();
+}
 
+function mouseClicked() {
+    touched();
+}
+
+function touched() {
+    let id = -1;
+    for(let i = 0; i < floatiesCnt; i++) {
+        let flo = floaties[i];
+        if (dist(mouseX, mouseY, flo.x, flo.y) <= flo.r)
+            id = i;
+    }
 }
 
 function switchBorderColor() {
@@ -42,7 +54,7 @@ function drawBorder() {
 
     rectMode(CORNER);
     rect(0, 0, gridCellWidth, height);
-    rect(width - gridCellWidth + 1, 0, gridCellWidth, height);
+    rect(width - gridCellWidth, 0, gridCellWidth, height);
     rect(0, 0, width, gridCellHeight - 1);
     rect(0, height - gridCellHeight, width, gridCellHeight);
 

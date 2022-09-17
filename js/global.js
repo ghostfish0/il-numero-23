@@ -69,20 +69,18 @@ let floaties = [];
 
 let canvasWidth = 564;
 let canvasHeight = 747;
-let canvasZoom = 1.2;
+let sizeunit = 50;
+let canvasZoom = 0.75;
 canvasHeight = canvasHeight * canvasZoom;
 canvasWidth = canvasWidth * canvasZoom;
-
-let canvasMargin = 50;
-
-let sizeunit = 50;
+sizeunit = sizeunit * canvasZoom;
 
 let gridColCnt = 17;
 let gridRowCnt = 22;
 let gridCellWidth = canvasWidth / gridColCnt;
 let gridCellHeight = canvasHeight / gridRowCnt;
 
-let borderColorIndex = 0;
+let borderColorIndex = 1;
 
 let objectsTouched = false;
 

@@ -75,7 +75,7 @@ class Floatie {
 			this.showtitle();
 		else
 			this.showicon();
-		
+
 */	}
 
 	move() {
@@ -84,13 +84,26 @@ class Floatie {
 	}
 
 	edges() {
-		if (this.x > width - this.r)
-			this.vel.x = -this.vel.x;
-		else if (this.x < this.r)
-			this.vel.x = -this.vel.x;
-		if (this.y > height - this.r)
-			this.vel.y = -this.vel.y;
-		else if (this.y < this.r)
-			this.vel.y = -this.vel.y;
+		if (this.shape == "spiked") {			
+			if (this.x > width - this.r - gridCellWidth)
+				this.vel.x = -this.vel.x;
+			else if (this.x < this.r + gridCellWidth)
+				this.vel.x = -this.vel.x;
+			if (this.y > height - this.r - gridCellHeight)
+				this.vel.y = -this.vel.y;
+			else if (this.y < this.r + gridCellHeight)
+				this.vel.y = -this.vel.y;
+		}
+		else {
+			if (this.x - this.r > width)
+				this.x = -this.r;
+			else if (this.x + this.r < 0)
+				this.x = width + this.r;
+			if (this.y - this.r > height)
+				this.y = -this.r;
+			else if (this.y + this.r < 0)
+				this.y = height + this.r;
+
+		}
 }
 }
